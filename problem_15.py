@@ -8,6 +8,7 @@ the right and down, there are exactly 6 routes to the bottom right corner.
 How many such routes are there through a 20×20 grid?
 
 """
+from math import factorial as f
 
 n = 20
 
@@ -19,3 +20,6 @@ for y in range(n + 1):
             g[y][x] = g[y - 1][x] + g[y][x - 1]
 
 print(g[n][n])
+
+# OR because pascals triangle
+print(f(n * 2) / (f(n)**2))
