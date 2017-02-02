@@ -1,4 +1,5 @@
-"""Project Euler - Problem x.
+"""
+Project Euler - Problem x.
 
 This is a template
 
