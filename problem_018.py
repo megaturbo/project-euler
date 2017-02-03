@@ -35,6 +35,7 @@ containing one-hundred rows; it cannot be solved by brute force, and requires a
 clever method! ;o)
 
 """
+import copy
 
 pyr = """75
 95 64
@@ -57,4 +58,16 @@ for py in pyr.split('\n'):
     a.append([])
     for p in py.strip().split(' '):
         a[len(a) - 1].append(int(p))
-print(a)
+
+s = [a[0][0]]
+for h in range(1, len(a)):
+    so = copy.deepcopy(s)
+    for i in range(len(a[h])):
+        if i == 0:
+            s[0] += a[h][0]
+        elif i == len(a[h]) - 1:
+            s.append(so[i - 1] + a[h][i])
+        else:
+            s[i] = max(so[i-1], so[i]) + a[h][i]
+
+print(max(s))
