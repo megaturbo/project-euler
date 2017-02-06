@@ -22,3 +22,31 @@ Find the sum of all the positive integers which cannot be written as the sum of
 two abundant numbers.
 
 """
+from math import sqrt
+
+MAX = 20162  # real maximum
+
+
+def d(n):
+    """Sum alla dee properu divisors."""
+    d = 0
+    for i in range(1, int(sqrt(n) + 1)):
+        if n % i == 0:
+            d += i
+            if i != n / i and n != n / i:
+                d += n / i
+    return d
+
+
+# create every abundant numbers
+abundant = [i for i in range(MAX) if d(i) > i]
+
+# retain every possible sum of two abundant number
+canbe = set()
+for a in abundant:
+    for b in abundant:
+        canbe.add(a + b)
+
+# sum every number which is not a sum of two abundant numbers
+s = sum([i for i in range(MAX) if i not in canbe])
+print(s)
