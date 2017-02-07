@@ -26,6 +26,7 @@ What is the index of the first term in the Fibonacci sequence to contain 1000
 digits?
 
 """
+from math import log, ceil
 
 
 def f(i):
@@ -38,6 +39,6 @@ def f(i):
 
 
 for x, i in f(100000):
-    if(len(str(i))) == 1000:
+    if ceil(log(i, 10)) == 1000:
         break
 print(x)
