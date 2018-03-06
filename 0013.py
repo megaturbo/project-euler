@@ -107,6 +107,6 @@ s = """
 53503534226472524250874054075591789781264330331690
 """
 
-t = sum([int(n) for n in s.strip().split('\n')])
+t = sum(int(n) for n in s.strip().split('\n'))
 
 print(str(t)[:10])
