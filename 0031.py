@@ -16,21 +16,19 @@ How many different ways can £2 be made using any number of coins?
 
 
 note:
-Trying to do it with itertools because it'd solve the whole thing.
+Trying to do it without itertools because it'd solve the whole thing.
+
+what:
+I use an array to remember how much possibilities I got for every amount. First
+loop will check how many 1p possibilities for 1, 2, 3, ..., 200. So it will be
+1 for each.
+
+Then second pass will check 
 """
-
-GOAL = 2.0
-# odered by size, hence we can break the for-loop when we found one
-pb = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1.0, 2.0]
-
-def do(old_sum=0.0):
-    s = 0
-    for p in pb:
-        new_sum = old_sum + p
-        if new_sum < GOAL:
-            s += do(new_sum)
-        elif new_sum >= GOAL:
-            return s
-    return s
-
-print(do())
+goal = 200
+pb = [1, 2, 5, 10, 20, 50, 100, 200]
+s = [1] * (goal + 1)  # init at 1 is first pass
+for p in pb[1:]:
+    for i in range(p, goal + 1):
+        s[i] += s[i - p]
+print(s[goal])
