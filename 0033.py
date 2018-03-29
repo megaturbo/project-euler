@@ -16,3 +16,19 @@ If the product of these four fractions is given in its lowest common terms, find
 the value of the denominator.
 
 """
+from functools import reduce
+from fractions import Fraction
+
+f = [1, 1]
+for a in range(10, 100):
+    # ignore trivial cases
+    if a % 10 is 0:
+        continue
+    for b in range(a + 1, 100):
+        sa, sb = str(a), str(b)
+        if sa[-1:] == sb[:1] and sb[1:] != "0" and a / b == int(sa[:1]) / int(sb[-1:]):
+            f[0] *= a
+            f[1] *= b
+
+
+print(Fraction(f[0], f[1]).denominator)
