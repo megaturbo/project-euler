@@ -1,5 +1,3 @@
-extern crate num_traits;
-
 struct Fibonacci {
     curr: u32,
     next: u32,
