@@ -1,7 +1,7 @@
-fn compute(bound: u32) -> u32 {
-    (1..bound).filter(|&n| n % 3 == 0 || n % 5 == 0).sum()
+fn solve() -> u32{
+    return (1..1000).filter(|&n| n % 3 == 0 || n % 5 == 0).sum::<u32>();
 }
 
 fn main() {
-    println!("{:?}", compute(1000));
+    println!("{}", solve());
 }
