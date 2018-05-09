@@ -1,4 +1,11 @@
 [[package]]
+name = "iterators"
+version = "0.1.0"
+
+[[package]]
 name = "rust"
 version = "0.1.0"
+dependencies = [
+ "iterators 0.1.0",
+]
 

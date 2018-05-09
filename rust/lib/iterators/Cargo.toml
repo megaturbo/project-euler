@@ -1,9 +1,6 @@
 [package]
-name = "rust"
+name = "iterators"
 version = "0.1.0"
 authors = ["Thomas Roulin <thomasroulinch@gmail.com>"]
 
 [dependencies]
-
-[dependencies.iterators]
-path = "./lib/iterators"
