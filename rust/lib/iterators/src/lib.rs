@@ -1,3 +1,4 @@
+// Fibonnaci iterator
 pub struct Fibonacci {
     curr: u32,
     next: u32,
