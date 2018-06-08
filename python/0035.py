@@ -13,15 +13,7 @@ How many circular primes are there below one million?
 
 """
 
-def is_prime(n):
-    if n == 0 or n == 1:
-        return False
-    i = 2
-    while i ** 2 <= n:
-        if n % i == 0:
-            return False
-        i += 1
-    return True
+from utils import is_prime
 
 def rotate(l, n):
     return l[-n:] + l[:-n]

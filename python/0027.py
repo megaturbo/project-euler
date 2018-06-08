@@ -29,7 +29,7 @@ with n=0.
 
 """
 
-from problem_007 import is_prime
+from utils import is_prime
 
 m = 0
 for a in range(-999, 1000):
