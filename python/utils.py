@@ -20,6 +20,22 @@ def is_prime(n):
     return True
 
 
+def smaller_prime(n):
+    """Give the biggest prime smaller than n."""
+    for i in range(n, 0, -2):
+        if is_prime(i):
+            return i
+
+
+def primes(n):
+    """
+    Return a generator of prime numbers.
+
+    :param n:   The count of prime it will generate before ending
+    """
+    return filter(is_prime, range(1, n))
+
+
 def pandigital_gen(i=1):
     """
     Return a pandigital generator.
